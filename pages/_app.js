@@ -1,9 +1,8 @@
-import Head from "next/head";
-
 import "../styles/globals.css";
+import HomePage from "./about";
 
-function MyApp({ Component, pageProps }) {
-  return null;
+function MyApp() {
+  return <HomePage />;
 }
 
 export default MyApp;
