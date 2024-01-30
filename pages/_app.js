@@ -1,8 +1,7 @@
 import "../styles/globals.css";
-import HomePage from "./about";
 
-function MyApp() {
-  return <HomePage />;
+function MyApp({ Component, pageProps }) {
+  return <Component />;
 }
 
 export default MyApp;
