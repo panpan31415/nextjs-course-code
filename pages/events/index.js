@@ -1,7 +1,7 @@
 import EventList from "../../components/events/EventList";
 import { getAllEvents, getFilteredEvents } from "../../dummy-data";
 import EventSearch from "../../components/events/event-search";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { useRouter } from "next/router";
 export default function EventPage() {
   const router = useRouter();
