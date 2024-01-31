@@ -3,6 +3,8 @@ import { getFilteredEvents } from "../../dummy-data";
 import EventList from "../../components/events/EventList";
 import { Fragment } from "react";
 import ResultsTitle from "../../components/results-title/results-title";
+import Button from "../../components/ui/Button";
+import ErrorAlert from "../../components/error-alert/error-alert";
 
 export default function FilteredEventPage() {
   const router = useRouter();
@@ -14,13 +16,23 @@ export default function FilteredEventPage() {
     year: parseInt(year),
     month: parseInt(month),
   });
+
   if (filteredEvents && filteredEvents.length > 0) {
     return (
       <Fragment>
-        <ResultsTitle />
+        <ResultsTitle date={new Date(parseInt(year), parseInt(month) - 1)} />
         <EventList items={filteredEvents} />
       </Fragment>
     );
   }
-  return <p className="center">no events found</p>;
+  return (
+    <Fragment>
+      <main className="center">
+        <ErrorAlert>
+          <p className="center">No Events Found</p>
+        </ErrorAlert>
+        <Button link="/events">Show All Events</Button>
+      </main>
+    </Fragment>
+  );
 }
